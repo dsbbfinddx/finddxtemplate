@@ -1,0 +1,79 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# finddxtemplate
+
+<!-- badges: start -->
+[![pipeline status](https://forge.thinkr.fr/<group>/<project>/badges/master/pipeline.svg)](https://forge.thinkr.fr/<group>/<project>/-/commits/master)
+[![coverage report](https://forge.thinkr.fr/<group>/<project>/badges/master/coverage.svg)](http://<group>.pages.thinkr.fr/<project>/coverage.html)
+<!-- badges: end -->
+
+<!-- description: start -->
+This is package {finddxtemplate}: Tools to create a Rmd template for html/pdf documents.  
+Current version is 0.0.0.9000.
+<!-- description: end -->
+
+## Installation
+<!-- install: start -->
+The list of dependencies required to install this package is: magrittr, testthat.
+
+To install the package, you can run the following script
+
+```{r, echo=TRUE, eval=FALSE}
+# install.packages("remotes")
+remotes::install_local(path = "finddxtemplate_0.0.0.9000.tar.gz")
+```
+
+In case something went wrong, you may want to install dependencies before using:
+
+```{r, echo=TRUE, eval=FALSE}
+# No Remotes ----
+# Attachments ----
+to_install <- c("magrittr")
+  for (i in to_install) {
+    message(paste("looking for ", i))
+    if (!requireNamespace(i)) {
+      message(paste("     installing", i))
+      install.packages(i)
+    }
+  }
+```
+
+<!-- install: end -->
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(finddxtemplate)
+## basic example code
+```
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!

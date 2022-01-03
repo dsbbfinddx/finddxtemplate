@@ -1,2 +1,9 @@
 .Rproj.user
 docs
+.DS_Store
+.Rdata
+.Rhistory
+.httr-oauth
+docs/
+rsconnect/
+docs/rsconnect

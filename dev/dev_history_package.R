@@ -17,14 +17,13 @@ thinkridentity::get_author()
 
 my_desc <- description$new("!new")
 my_desc$set_version("0.0.0.9000")
-my_desc$set(Package = "deeptools")
-my_desc$set(Title = "Tools to analyze video images")
-my_desc$set(Description = "Images were analyzed in a game. This package explores the results of the game.")
+my_desc$set(Package = "finddxtemplate")
+my_desc$set(Title = "Tools to create a Rmd template for html/pdf documents")
+my_desc$set(Description = "Tools to create a Rmd template for html/pdf documents.")
 my_desc$set("Authors@R",
             'c(
-  person("Sebastien", "Rochette", email = "sebastien@thinkr.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-1565-9313")),
-  person("Colin", "Fay", email = "colin@thinkr.fr", role = c("aut"), comment = c(ORCID = "0000-0001-7343-1846")),
-  person("Vincent", "Guyader", email = "vincent@thinkr.fr", role = c("aut"), comment = c(ORCID = "0000-0003-0671-9270")),
+  person(given = "Margot", family = "Brard", role = "aut", email = "margot@thinkr.fr", comment = c(ORCID = "0000-0001-6754-0659")),
+  person(given = "Arthur", family = "Bréant", role = "aut", email = "arthur@thinkr.fr", comment = c(ORCID = "0000-0003-1668-0963")),
   person(given = "ThinkR", role = "cph")
 )')
 my_desc$set("VignetteBuilder", "knitr")

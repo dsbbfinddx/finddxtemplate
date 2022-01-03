@@ -87,7 +87,7 @@ install.packages("fusen", repos = getOption("repos")["thinkropen"])
 # attachment::att_amend_desc(extra.suggests = c("bookdown"))
 # attachment::create_dependencies_file()
 attachment::att_amend_desc()
-devtools:check()
+devtools::check()
 
 # _renv
 custom_packages <- c(
