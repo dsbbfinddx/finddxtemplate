@@ -12,3 +12,4 @@
 ^\.gitlab-ci\.yml$
 ^README\.Rmd$
 ^docs$
+^cache$

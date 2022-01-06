@@ -1,6 +1,8 @@
 image: rocker/verse
 
 variables:
+  RENV_PATHS_CACHE: "cache"
+  RENV_PATHS_LIBRARY: "renv/library"
   GIT_DEPTH: 10
   REPO_NAME: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"
   R_LIBS: "ci/lib"
@@ -9,6 +11,8 @@ variables:
 cache:
   key: global-cache
   paths:
+      - ${RENV_PATHS_CACHE}
+      - ${RENV_PATHS_LIBRARY}
       - ${R_LIBS_USER}
 
 stages:
@@ -25,6 +29,9 @@ building:
     - apt-get update -qq && apt-get install -y libharfbuzz-dev libfribidi-dev
     - echo "Library path for packages :" $R_LIBS_USER
     - mkdir -p $R_LIBS_USER
+    - mkdir -p $RENV_PATHS_CACHE
+    - Rscript -e 'source("renv/activate.R")'
+    - Rscript -e 'renv::restore()'
     - Rscript -e 'install.packages("remotes")'
     - Rscript -e 'install.packages("rcmdcheck")'
     - Rscript -e 'remotes::install_local(upgrade = "never")'
@@ -45,11 +52,13 @@ coverage:
     allow_failure: true
     when: on_success
     only:
-        - main
         - master
+        - main
         - production
     script:
-        - Rscript -e 'remotes::install_local(upgrade = "never")'
+        - Rscript -e 'source("renv/activate.R")'
+        - Rscript -e 'renv::restore()'
+        - Rscript -e 'install.packages("remotes")'
         - Rscript -e 'remotes::install_cran(c("covr", "DT"), upgrade = "never")'
         - Rscript -e 'covr::gitlab(quiet = FALSE)'
     artifacts:
@@ -65,14 +74,17 @@ integration:
     allow_failure: true
     when: on_success
     only:
-        - main
         - master
+        - main
         - production
         - test-ci
     script:
+        - Rscript -e 'source("renv/activate.R")'
+        - Rscript -e 'renv::restore()'
+        - Rscript -e 'install.packages("remotes")'
         - Rscript -e 'install.packages("remotes");remotes::install_github("ThinkR-open/thinkrtemplate", upgrade = "never")'
-        - Rscript -e 'remotes::install_cran(c("pkgdown"), upgrade = "never")'
         - Rscript -e 'remotes::install_local(upgrade = "never")'
+        - Rscript -e 'remotes::install_cran(c("pkgdown"), upgrade = "never")'
         - Rscript -e 'pkgdown::build_site()'
     artifacts:
         paths:
@@ -127,8 +139,8 @@ integration-main:
     dependencies:
         - integration
     only:
-        - main
         - master
+        - main
     script:
         - mkdir -p public
         - 'curl --location --output artifacts.zip --header "JOB-TOKEN: $CI_JOB_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/jobs/artifacts/production/download?job=pages" &&
@@ -150,7 +162,7 @@ pages:
         paths:
             - public
     only:
-        - main
         - master
+        - main
         - production
         - test-ci

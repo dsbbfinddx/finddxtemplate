@@ -53,7 +53,7 @@ usethis::use_test("app")
 thinkridentity::use_gitlab_ci(image = "rocker/verse",
                               gitlab_url = "https://forge.thinkr.fr",
                               repo_name = "https://packagemanager.rstudio.com/all/__linux__/focal/latest",
-                              type = "check-coverage-pkgdown") # "check-coverage-pkgdown-renv"
+                              type = "check-coverage-pkgdown-renv")
 # GitLab MR and git commit templates
 thinkridentity::add_gitlab_templates()
 
