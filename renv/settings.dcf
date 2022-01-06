@@ -5,4 +5,3 @@ r.version:
 snapshot.type: implicit
 use.cache: FALSE
 vcs.ignore.library: TRUE
-vcs.ignore.local: TRUE

@@ -44,14 +44,12 @@
     "attachment": {
       "Package": "attachment",
       "Version": "0.2.4",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "attachment",
-      "RemoteUsername": "ThinkR-open",
+      "Source": "Repository",
+      "Repository": "https://thinkr-open.r-universe.dev",
+      "RemoteUrl": "https://github.com/ThinkR-open/attachment",
       "RemoteRef": "HEAD",
       "RemoteSha": "4f1a56541b7de0ffd23310264923767fdbfca9b9",
-      "Hash": "32c915cdc90207cd0b1c212493e6dfe8"
+      "Hash": "c30d6fbe723eec254196ac30cf8776d1"
     },
     "backports": {
       "Package": "backports",
@@ -81,13 +79,6 @@
       "Repository": "CRAN",
       "Hash": "9fe98599ca456d6552421db0d6772d8f"
     },
-    "bookdown": {
-      "Package": "bookdown",
-      "Version": "0.24",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "3837766a1e1b527af25fa3e2d12a2800"
-    },
     "brew": {
       "Package": "brew",
       "Version": "1.0-6",
@@ -115,6 +106,16 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "461aa75a11ce2400245190ef5d3995df"
+    },
+    "checkhelper": {
+      "Package": "checkhelper",
+      "Version": "0.0.0.9000",
+      "Source": "Repository",
+      "Repository": "https://thinkr-open.r-universe.dev",
+      "RemoteUrl": "https://github.com/ThinkR-open/checkhelper",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "6a61d92651e02ff6565f0837edb490c0d5097931",
+      "Hash": "005fbf5e1bc5568958f98230f37586d9"
     },
     "checkmate": {
       "Package": "checkmate",
@@ -258,15 +259,13 @@
     },
     "fusen": {
       "Package": "fusen",
-      "Version": "0.3.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "fusen",
-      "RemoteUsername": "ThinkR-open",
+      "Version": "0.3.0.9000",
+      "Source": "Repository",
+      "Repository": "https://thinkr-open.r-universe.dev",
+      "RemoteUrl": "https://github.com/ThinkR-open/fusen",
       "RemoteRef": "HEAD",
-      "RemoteSha": "19ec8f60de3c26c33c1b1036b36914278d08ee8d",
-      "Hash": "8c8c42a54edec964391005b1f21a4243"
+      "RemoteSha": "e876fbab81b4f438b88f2f81833874cc128ba11c",
+      "Hash": "333372d8a78ef9766aae1210e84e287b"
     },
     "generics": {
       "Package": "generics",
@@ -277,10 +276,10 @@
     },
     "gert": {
       "Package": "gert",
-      "Version": "1.4.3",
+      "Version": "1.4.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "3a3f29a74f8bd85ed8d53ab039b18bcd"
+      "Hash": "8e54ffecc152da9e1e366ff1a4012bb1"
     },
     "gh": {
       "Package": "gh",
@@ -319,10 +318,10 @@
     },
     "hms": {
       "Package": "hms",
-      "Version": "1.1.1",
+      "Version": "1.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5b8a2dd0fdbe2ab4f6081e6c7be6dfca"
+      "Hash": "e4bf161ccb74a2c1c0e8ac63bbe332b4"
     },
     "htmltools": {
       "Package": "htmltools",
@@ -515,10 +514,10 @@
     },
     "readr": {
       "Package": "readr",
-      "Version": "2.1.1",
+      "Version": "2.0.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "e9df4b445fca203653f04ece2f97d51e"
+      "Hash": "34807ea4fb5900386ddef904eef8bdb8"
     },
     "rematch2": {
       "Package": "rematch2",
@@ -536,10 +535,10 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.13.2",
+      "Version": "0.13.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "079cb1f03ff972b30401ed05623cbe92"
+      "Hash": "9f10d9db5b50400c348920c5c603385e"
     },
     "rex": {
       "Package": "rex",
@@ -669,10 +668,10 @@
     },
     "tzdb": {
       "Package": "tzdb",
-      "Version": "0.2.0",
+      "Version": "0.1.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "5e069fb033daf2317bd628d3100b75c5"
+      "Hash": "fb2b801053decce71295bb8cb04d438b"
     },
     "usethis": {
       "Package": "usethis",
@@ -697,10 +696,10 @@
     },
     "vroom": {
       "Package": "vroom",
-      "Version": "1.5.7",
+      "Version": "1.5.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "976507b5a105bc3bdf6a5a5f29e0684f"
+      "Hash": "9c3b3a3f947c7936cea7485349247e5b"
     },
     "waldo": {
       "Package": "waldo",

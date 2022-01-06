@@ -78,15 +78,15 @@ if (Sys.getenv("RENV_PATHS_CACHE") != "") {
 # Sys.getenv("RENV_PATHS_CACHE")
 
 # Install from GitHub through r-universe
-install.packages("attachment", repos = getOption("repos")["thinkropen"])
-install.packages("fusen", repos = getOption("repos")["thinkropen"])
+install.packages("attachment")
+install.packages("fusen")
 
 # git push / pull ====
 ## Ce qu'il faut avant d'envoyer sur le serveur
 # install.packages("attachment", repos = getOption("repos")["thinkropen"])
 # attachment::att_amend_desc(extra.suggests = c("bookdown"))
 # attachment::create_dependencies_file()
-attachment::att_amend_desc()
+attachment::att_amend_desc(extra.suggests = "knitr")
 devtools::check()
 
 # _renv
