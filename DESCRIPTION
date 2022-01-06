@@ -12,8 +12,7 @@ Description: Tools to create a Rmd template for html/pdf documents.
 License: file LICENSE
 Imports: 
     magrittr,
-    utils
-Suggests: 
+    utils, 
     knitr,
     testthat
 Config/testthat/edition: 3
