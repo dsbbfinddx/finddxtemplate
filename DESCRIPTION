@@ -2,17 +2,22 @@ Package: finddxtemplate
 Title: Tools to create a Rmd template for html/pdf documents
 Version: 0.0.0.9000
 Authors@R: c(
-  person(given = "Margot", family = "Brard", role = "aut", email = "margot@thinkr.fr", comment = c(ORCID = "0000-0001-6754-0659")),
-  person(given = "Arthur", family = "Bréant", role = "aut", email = "arthur@thinkr.fr", comment = c(ORCID = "0000-0003-1668-0963")),
-  person(given = "ThinkR", role = "cph")
- )
+    person("Margot", "Brard", , "margot@thinkr.fr", role = "aut",
+           comment = c(ORCID = "0000-0001-6754-0659")),
+    person("Arthur", "Bréant", , "arthur@thinkr.fr", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-1668-0963")),
+    person("ThinkR", role = "cph")
+  )
 Description: Tools to create a Rmd template for html/pdf documents.
 License: file LICENSE
-Encoding: UTF-8
-VignetteBuilder: knitr
-RoxygenNote: 7.1.2
 Imports: 
-    magrittr
+    magrittr,
+    utils
 Suggests: 
-    testthat (>= 3.0.0)
+    knitr,
+    testthat
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
+Encoding: UTF-8
+RoxygenNote: 7.1.2

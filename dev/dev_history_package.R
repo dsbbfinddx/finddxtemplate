@@ -140,13 +140,26 @@ setwd(origwd)
 # Dependencies ----
 ## Ce qu'il faut avant d'envoyer sur le serveur
 # devtools::install_github("ThinkR-open/attachment")
-# attachment::att_amend_desc(extra.suggests = c("bookdown"))
-# attachment::create_dependencies_file()
-attachment::att_amend_desc()
+attachment::att_amend_desc(
+  extra.suggests = c("knitr", "testthat")
+)
 # Cela est normal : "Error in eval(x, envir = envir) : object 'db_local' not found"
-devtools:check()
+devtools::check()
 
+# _renv
+custom_packages <- c(
+  attachment::att_from_description(),
+  "renv",
+  "devtools", "roxygen2", "usethis", "pkgload",
+  "testthat", "covr", "attachment", "remotes",
+  "bookdown",
+  # remotes::install_github("ThinkR-open/checkhelper")
+  "pkgdown", "styler", "checkhelper", "fusen", "boxr"
+)
+renv::snapshot(packages = custom_packages)
 
+## After pull
+renv::restore()
 
 # Description and Bibliography
 chameleon::create_pkg_desc_file(out.dir = "inst", source = c("archive"), to = "html")
