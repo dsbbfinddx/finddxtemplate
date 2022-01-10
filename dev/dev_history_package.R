@@ -114,7 +114,7 @@ chameleon::build_pkgdown(
   move = TRUE, clean_before = TRUE, clean_after = TRUE
 )
 
-chameleon::open_pkgdown_function(path = "docs")
+chameleon::open_pkgdown_function(path = "inst/docs")
 # pkg::open_pkgdown()
 
 ## __ deploy on rsconnect
@@ -130,8 +130,8 @@ rsconnect::deployApp(
   ".",                       # the directory containing the content
   appFiles = list.files(".", recursive = TRUE), # the list of files to include as dependencies (all of them)
   appPrimaryDoc = "index.html",                 # the primary file
-  appName = "appname",                   # name of the endpoint (unique to your account on Connect)
-  appTitle = "appname",                  # display name for the content
+  appName = "finddxtemplate-pkg-doc",                   # name of the endpoint (unique to your account on Connect)
+  appTitle = "finddxtemplate-pkg-doc",                  # display name for the content
   account = account_name,                # your Connect username
   server = account_server                    # the Connect server, see rsconnect::accounts()
 )
