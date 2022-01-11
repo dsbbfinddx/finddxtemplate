@@ -71,6 +71,7 @@ if (dir.exists("public")) {
   origwd <- setwd("docs")
 }
 print(paste("--", getwd(), "--"))
+print(paste("user: ", Sys.getenv("CONNECT_USER")))
 
 rsconnect::addServer("https://connect.thinkr.fr/__api__", name = "connect")
 rsconnect::connectApiUser(account = Sys.getenv("CONNECT_USER"),
