@@ -1,36 +1,36 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# finddxtemplate
+# finddxtemplate <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
-<!-- badges: start -->
+[![R build
+status](https://forge.thinkr.fr/finddx/finddxtemplate/badges/main/pipeline.svg)](https://forge.thinkr.fr/finddx/finddxtemplate/-/pipelines)
+[![Codecov test
+coverage](https://forge.thinkr.fr/finddx/finddxtemplate/badges/main/coverage.svg)](https://connect.thinkr.fr/finddxtemplate-pkgdown-website/coverage.html)
 
-[![pipeline
-status](https://forge.thinkr.fr/%3Cgroup%3E/%3Cproject%3E/badges/master/pipeline.svg)](https://forge.thinkr.fr/%3Cgroup%3E/%3Cproject%3E/-/commits/master)
-<!-- badges: end -->
+The {finddxtemplate} package provides design tools to create a Rmd
+template for html/pdf documents.
 
-<!-- description: start -->
+Current version is 0.0.0.9000.
 
-This is package {finddxtemplate}: Tools to create a Rmd template for
-html/pdf documents.  
-Current version is 0.0.0.9000. <!-- description: end -->
+The documentation is available here:
+
+  - pkgdown: <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/>
+  - coverage report:
+    <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/coverage.html>
 
 ## Installation
 
-<!-- install: start -->
-
-The list of dependencies required to install this package is: magrittr,
-testthat.
-
-To install the package, you can run the following script
+You can install the package with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_local(path = "finddxtemplate_0.0.0.9000.tar.gz")
 ```
 
-## Doc and coverage
+``` r
+options(remotes.git_credentials = git2r::cred_user_pass("gitlab-ci-token", Sys.getenv("FORGE_THINKR_TOKEN")))
+remotes::install_git("https://forge.thinkr.fr/finddx/finddxtemplate")
+```
 
-  - pkgdown: <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/>
-  - coverage report:
-    <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/coverage.html>
+## Use the package
