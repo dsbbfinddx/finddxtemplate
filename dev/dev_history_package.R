@@ -23,7 +23,7 @@ my_desc$set(Description = "Tools to create a Rmd template for html/pdf documents
 my_desc$set("Authors@R",
             'c(
   person(given = "Margot", family = "Brard", role = "aut", email = "margot@thinkr.fr", comment = c(ORCID = "0000-0001-6754-0659")),
-  person(given = "Arthur", family = "Bréant", role = "aut", email = "arthur@thinkr.fr", comment = c(ORCID = "0000-0003-1668-0963")),
+  person(given = "Arthur", family = "Bréant", role = c("aut", "cre"), email = "arthur@thinkr.fr", comment = c(ORCID = "0000-0003-1668-0963")),
   person(given = "ThinkR", role = "cph")
 )')
 my_desc$set("VignetteBuilder", "knitr")
@@ -105,37 +105,17 @@ chameleon::build_book(clean_rmd = TRUE, clean = TRUE)
 # pkg::open_guide()
 
 # _Pkgdown
-# pkgdown::build_site()
+pkgdown::build_site()
 
-chameleon::build_pkgdown(
-  # lazy = TRUE,
-  yml = system.file("pkgdown/_pkgdown.yml", package = "thinkridentity"),
-  favicon = system.file("pkgdown/favicon.ico", package = "thinkridentity"),
-  move = TRUE, clean_before = TRUE, clean_after = TRUE
-)
-
-chameleon::open_pkgdown_function(path = "docs")
+# chameleon::build_pkgdown(
+#   # lazy = TRUE,
+#   yml = system.file("pkgdown/_pkgdown.yml", package = "thinkridentity"),
+#   favicon = system.file("pkgdown/favicon.ico", package = "thinkridentity"),
+#   move = TRUE, clean_before = TRUE, clean_after = TRUE
+# )
+#
+# chameleon::open_pkgdown_function(path = "docs")
 # pkg::open_pkgdown()
-
-## __ deploy on rsconnect
-usethis::use_git_ignore("docs/rsconnect")
-usethis::use_git_ignore("inst/docs/rsconnect")
-usethis::use_git_ignore("rsconnect")
-
-rsconnect::accounts()
-account_name <- rstudioapi::showPrompt("Rsconnect account", "Please enter your username:", "name")
-account_server <- rstudioapi::showPrompt("Rsconnect server", "Please enter your server name:", "1.1.1.1")
-origwd <- setwd("inst/docs")
-rsconnect::deployApp(
-  ".",                       # the directory containing the content
-  appFiles = list.files(".", recursive = TRUE), # the list of files to include as dependencies (all of them)
-  appPrimaryDoc = "index.html",                 # the primary file
-  appName = "appname",                   # name of the endpoint (unique to your account on Connect)
-  appTitle = "appname",                  # display name for the content
-  account = account_name,                # your Connect username
-  server = account_server                    # the Connect server, see rsconnect::accounts()
-)
-setwd(origwd)
 
 # Dependencies ----
 ## Ce qu'il faut avant d'envoyer sur le serveur

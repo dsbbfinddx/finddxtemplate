@@ -3,10 +3,6 @@
     "Version": "4.0.3",
     "Repositories": [
       {
-        "Name": "thinkropen",
-        "URL": "https://thinkr-open.r-universe.dev"
-      },
-      {
         "Name": "CRAN",
         "URL": "https://cran.rstudio.com"
       }
@@ -110,12 +106,14 @@
     "checkhelper": {
       "Package": "checkhelper",
       "Version": "0.0.0.9000",
-      "Source": "Repository",
-      "Repository": "https://thinkr-open.r-universe.dev",
-      "RemoteUrl": "https://github.com/ThinkR-open/checkhelper",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "checkhelper",
+      "RemoteUsername": "ThinkR-open",
       "RemoteRef": "HEAD",
       "RemoteSha": "6a61d92651e02ff6565f0837edb490c0d5097931",
-      "Hash": "005fbf5e1bc5568958f98230f37586d9"
+      "Hash": "76fefffaf48b519e3355b6223d1a7501"
     },
     "checkmate": {
       "Package": "checkmate",
@@ -238,10 +236,10 @@
     },
     "fansi": {
       "Package": "fansi",
-      "Version": "0.5.0",
+      "Version": "1.0.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "d447b40982c576a72b779f0a3b3da227"
+      "Hash": "ae34c3d1fdfac1566ca17c1b5d8f2613"
     },
     "fastmap": {
       "Package": "fastmap",
@@ -259,13 +257,10 @@
     },
     "fusen": {
       "Package": "fusen",
-      "Version": "0.3.0.9000",
+      "Version": "0.3.0",
       "Source": "Repository",
-      "Repository": "https://thinkr-open.r-universe.dev",
-      "RemoteUrl": "https://github.com/ThinkR-open/fusen",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "e876fbab81b4f438b88f2f81833874cc128ba11c",
-      "Hash": "333372d8a78ef9766aae1210e84e287b"
+      "Repository": "CRAN",
+      "Hash": "27258f4078afe9455161a82ef54a41bd"
     },
     "generics": {
       "Package": "generics",
@@ -535,10 +530,10 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.13.0",
+      "Version": "0.13.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "9f10d9db5b50400c348920c5c603385e"
+      "Hash": "079cb1f03ff972b30401ed05623cbe92"
     },
     "rex": {
       "Package": "rex",
@@ -637,6 +632,18 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "1ab6223d3670fac7143202cb6a2d43d5"
+    },
+    "thinkrtemplate": {
+      "Package": "thinkrtemplate",
+      "Version": "0.1.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "thinkrtemplate",
+      "RemoteUsername": "ThinkR-open",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "4384aebe5b1532c7df535807f2b0df08d5ce3d75",
+      "Hash": "afa4a953f4cbe1442eef7fd53da8f960"
     },
     "tibble": {
       "Package": "tibble",

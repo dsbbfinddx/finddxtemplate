@@ -21,6 +21,7 @@ stages:
   - pkgdown
   - pkgdown-move
   - deploy
+  - deploy-connect
 
 building:
   stage: build
@@ -40,7 +41,7 @@ building:
       paths:
           - check
       expire_in: 30 days
-      
+
 # To have the coverage percentage appear as a gitlab badge follow these
 # instructions:
 # https://docs.gitlab.com/ee/user/project/pipelines/settings.html#test-coverage-parsing
@@ -166,3 +167,19 @@ pages:
         - main
         - production
         - test-ci
+
+connect:
+  stage: deploy-connect
+  dependencies:
+    - pages
+  only:
+    - main
+    - master
+    - test-ci
+  script:
+    - Rscript "dev/dev_history_connect.R"
+  artifacts:
+    paths:
+    # This will download artifacts from previous jobs
+        - public
+    expire_in: 30 days
