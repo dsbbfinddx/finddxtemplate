@@ -6,6 +6,8 @@
 \alias{finddxtemplate-package}
 \title{finddxtemplate: Tools to create a Rmd template for html/pdf documents}
 \description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
 Tools to create a Rmd template for html/pdf documents.
 }
 \details{

@@ -114,7 +114,7 @@ pkgdown::build_site()
 #   move = TRUE, clean_before = TRUE, clean_after = TRUE
 # )
 #
-# chameleon::open_pkgdown_function(path = "inst/docs")
+# chameleon::open_pkgdown_function(path = "docs")
 # pkg::open_pkgdown()
 
 # Dependencies ----

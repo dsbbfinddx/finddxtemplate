@@ -2,6 +2,8 @@
 # _Créer un token de déploiement dédié au projet pour le user générique sur Connect
 # _Ajouter le token en variable privée masquée dans le dépot GitLab: CONNECT_TOKEN
 # _Ajouter le nom d'utilisateur Connect en variable privée masquée dans le dépot GitLab: CONNECT_USER
+# _Dans Settings > CI/CD > Variables > Expand > Add variable
+# _Attention : si vous cochez "Protected" au moment de la création de la variable, alors celle-ci ne sera active que pour les branches protégées
 # _Ajouter la ligne suivante dans votre gitlab-ci.yml, après la création du pkgdown
 #   __ Si c'est le pkgdown que vous voulez envoyer
 # `        - Rscript "dev/dev_history_connect.R"`
