@@ -78,6 +78,8 @@ rendering:
         - production
         - test-ci
     script:
+        - Rscript -e 'install.packages("remotes")'
+        - Rscript -e 'remotes::install_cran(c("rmarkdown", "ggplot2"), upgrade = "never")'
         - Rscript "dev/dev_history_render_template.R"
     artifacts:
         paths:
