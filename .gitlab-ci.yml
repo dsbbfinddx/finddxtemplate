@@ -83,7 +83,7 @@ rendering:
         - Rscript -e 'install.packages("remotes")'
         - Rscript -e 'remotes::install_local(upgrade = "never")'
         - Rscript -e 'remotes::install_cran("rmarkdown", upgrade = "never")'
-        - Rscript -e 'rmarkdown::render(input = system.file("rmarkdown", "rmd_template.Rmd", package = "finddxtemplate"), output_format = rmarkdown::html_document(), output_dir = "public")'
+        - Rscript -e 'rmarkdown::render(input = system.file("rmarkdown", "rmd_template.Rmd", package = "finddxtemplate", lib.loc = "ci/lib"), output_format = rmarkdown::html_document(), output_dir = "public")'
     artifacts:
         paths:
             - public
