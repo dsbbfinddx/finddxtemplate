@@ -4,11 +4,11 @@
 \name{finddxtemplate-package}
 \alias{finddxtemplate}
 \alias{finddxtemplate-package}
-\title{finddxtemplate: Tools to create a Rmd template for html/pdf documents}
+\title{finddxtemplate: Tools to create a Rmd template for html documents}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Tools to create a Rmd template for html/pdf documents.
+Tools to create a Rmd template for html documents.
 }
 \details{
 Open the pkgdown : \code{finddxtemplate::open_pkgdown()}

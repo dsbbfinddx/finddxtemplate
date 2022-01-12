@@ -18,8 +18,8 @@ thinkridentity::get_author()
 my_desc <- description$new("!new")
 my_desc$set_version("0.0.0.9000")
 my_desc$set(Package = "finddxtemplate")
-my_desc$set(Title = "Tools to create a Rmd template for html/pdf documents")
-my_desc$set(Description = "Tools to create a Rmd template for html/pdf documents.")
+my_desc$set(Title = "Tools to create a Rmd template for html documents")
+my_desc$set(Description = "Tools to create a Rmd template for html documents.")
 my_desc$set("Authors@R",
             'c(
   person(given = "Margot", family = "Brard", role = "aut", email = "margot@thinkr.fr", comment = c(ORCID = "0000-0001-6754-0659")),
