@@ -19,6 +19,11 @@ The documentation is available here:
   - coverage report:
     <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/coverage.html>
 
+## HTML template
+
+An overview of the HTML template is available here:
+<https://connect.thinkr.fr/finddxtemplate-pkgdown-website/rmd_template.html>
+
 ## Installation
 
 You can install the package with:
@@ -34,3 +39,5 @@ remotes::install_git("https://forge.thinkr.fr/thinkr/missions/finddx/finddxtempl
 ```
 
 ## Use the package
+
+TODO

@@ -1,5 +1,5 @@
 ---
-title: Test
+title: FIND HTML template
 author: ThinkR
 date: "`r Sys.Date()`"
 ---
@@ -13,30 +13,30 @@ library(finddxtemplate)
 library(ggplot2)
 ```
 
-# Rédiger du texte
+# Writing text
 
-Ceci est une trame de rapport réalisée avec le package `{finddxtemplate}`.
+This is an example report template made with the package `{finddxtemplate}`.
 
-## Titre de niveau 2
+## Level 2 title
 
-### Titre de niveau 3
+### Level 3 title
 
-#### Titre de niveau 4
+#### Level 4 title
 
-Implémenter des bullet points : 
+Implementing bullet points: 
 
-+ Point 1
-+ Point 2
++ Item 1
++ Item 2
 
-Intégrer un lien hypertexte : <https://thinkr.fr>
+Integrate a hyperlink: <https://www.finddx.org>
 
-Mettre du texte en **gras**. 
+Putting text in **bold**. 
 
-Mettre du texte en _italique_.
+Putting text in _italic_.
 
-# Intégrer du code et des résultats
+# Integrating code and results
 
-## Dans le corps du rapport
+## In the body of the report
 
 ```{r}
 iris %>% 
@@ -48,33 +48,37 @@ iris %>%
 ggplot(data = iris) +
   aes(x = Sepal.Width, fill = Species) +
   geom_density(alpha = 0.6, color = NA) +
-  labs(title = "Largeur des s\u00e9pales des iris",
-       subtitle = "Ceci est un graphique",
-       x = "Largeur des s\u00e9pales",
-       y = "Densit\u00e9",
-       fill = "Vari\u00e9t\u00e9 d\'iris")
+  labs(title = "Iris sepal width",
+       subtitle = "This is a ggplot2 plot",
+       x = "Sepal width",
+       y = "Density",
+       fill = "Iris species") +
+  scale_fill_manual(values = c("#5b254e", "#00a2ab", "#7b97a0")) +
+  theme_bw()
 ```
 
-## Sous la forme de tabsets {.tabset}
+## In the form of tabsets {.tabset}
 
-### Tableau
+### Table
 
 ```{r}
 iris %>% 
   DT::datatable()
 ```
 
-### Graphique
+### Plot
 
 ```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
 ggplot(data = iris) +
   aes(x = Sepal.Width, fill = Species) +
   geom_density(alpha = 0.6, color = NA) +
-  labs(title = "Largeur des s\u00e9pales des iris",
-       subtitle = "Ceci est un graphique",
-       x = "Largeur des s\u00e9pales",
-       y = "Densit\u00e9",
-       fill = "Vari\u00e9t\u00e9 d\'iris") +
+  labs(title = "Iris sepal width",
+       subtitle = "This is a ggplot2 plot",
+       x = "Sepal width",
+       y = "Density",
+       fill = "Iris species") +
+  scale_fill_manual(values = c("#5b254e", "#00a2ab", "#7b97a0")) +
   guides(fill = "none") +
-  facet_grid(rows = vars(Species))
+  facet_grid(rows = vars(Species)) +
+  theme_bw()
 ```
