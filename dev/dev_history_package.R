@@ -4,6 +4,8 @@ usethis::use_build_ignore("ci/lib")
 usethis::use_build_ignore("rsconnect")
 usethis::use_git_ignore("docs/")
 usethis::use_git_ignore("rsconnect/")
+usethis::use_git_ignore("public")
+usethis::use_build_ignore("public")
 # usethis::create_package(".")
 
 # Vaccinate for MacOS

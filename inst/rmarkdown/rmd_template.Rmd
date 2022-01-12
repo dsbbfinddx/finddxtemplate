@@ -1,0 +1,84 @@
+---
+title: FIND HTML template
+author: ThinkR
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+library(finddxtemplate)
+library(ggplot2)
+```
+
+# Writing text
+
+This is an example report template made with the package `{finddxtemplate}`.
+
+## Level 2 title
+
+### Level 3 title
+
+#### Level 4 title
+
+Implementing bullet points: 
+
++ Item 1
++ Item 2
+
+Integrate a hyperlink: <https://www.finddx.org>
+
+Putting text in **bold**. 
+
+Putting text in _italic_.
+
+# Integrating code and results
+
+## In the body of the report
+
+```{r}
+iris %>% 
+  head() %>% 
+  knitr::kable()
+```
+
+```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
+ggplot(data = iris) +
+  aes(x = Sepal.Width, fill = Species) +
+  geom_density(alpha = 0.6, color = NA) +
+  labs(title = "Iris sepal width",
+       subtitle = "This is a ggplot2 plot",
+       x = "Sepal width",
+       y = "Density",
+       fill = "Iris species") +
+  scale_fill_manual(values = c("#5b254e", "#00a2ab", "#7b97a0")) +
+  theme_bw()
+```
+
+## In the form of tabsets {.tabset}
+
+### Table
+
+```{r}
+iris %>% 
+  DT::datatable()
+```
+
+### Plot
+
+```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
+ggplot(data = iris) +
+  aes(x = Sepal.Width, fill = Species) +
+  geom_density(alpha = 0.6, color = NA) +
+  labs(title = "Iris sepal width",
+       subtitle = "This is a ggplot2 plot",
+       x = "Sepal width",
+       y = "Density",
+       fill = "Iris species") +
+  scale_fill_manual(values = c("#5b254e", "#00a2ab", "#7b97a0")) +
+  guides(fill = "none") +
+  facet_grid(rows = vars(Species)) +
+  theme_bw()
+```
