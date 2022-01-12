@@ -1,0 +1,80 @@
+---
+title: Test
+author: ThinkR
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+library(finddxtemplate)
+library(ggplot2)
+```
+
+# Rédiger du texte
+
+Ceci est une trame de rapport réalisée avec le package `{finddxtemplate}`.
+
+## Titre de niveau 2
+
+### Titre de niveau 3
+
+#### Titre de niveau 4
+
+Implémenter des bullet points : 
+
++ Point 1
++ Point 2
+
+Intégrer un lien hypertexte : <https://thinkr.fr>
+
+Mettre du texte en **gras**. 
+
+Mettre du texte en _italique_.
+
+# Intégrer du code et des résultats
+
+## Dans le corps du rapport
+
+```{r}
+iris %>% 
+  head() %>% 
+  knitr::kable()
+```
+
+```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
+ggplot(data = iris) +
+  aes(x = Sepal.Width, fill = Species) +
+  geom_density(alpha = 0.6, color = NA) +
+  labs(title = "Largeur des s\u00e9pales des iris",
+       subtitle = "Ceci est un graphique",
+       x = "Largeur des s\u00e9pales",
+       y = "Densit\u00e9",
+       fill = "Vari\u00e9t\u00e9 d\'iris")
+```
+
+## Sous la forme de tabsets {.tabset}
+
+### Tableau
+
+```{r}
+iris %>% 
+  DT::datatable()
+```
+
+### Graphique
+
+```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
+ggplot(data = iris) +
+  aes(x = Sepal.Width, fill = Species) +
+  geom_density(alpha = 0.6, color = NA) +
+  labs(title = "Largeur des s\u00e9pales des iris",
+       subtitle = "Ceci est un graphique",
+       x = "Largeur des s\u00e9pales",
+       y = "Densit\u00e9",
+       fill = "Vari\u00e9t\u00e9 d\'iris") +
+  guides(fill = "none") +
+  facet_grid(rows = vars(Species))
+```

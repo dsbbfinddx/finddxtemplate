@@ -18,6 +18,7 @@ cache:
 stages:
   - build
   - test
+  - template
   - pkgdown
   - pkgdown-move
   - deploy
@@ -62,6 +63,26 @@ coverage:
         - Rscript -e 'install.packages("remotes")'
         - Rscript -e 'remotes::install_cran(c("covr", "DT"), upgrade = "never")'
         - Rscript -e 'covr::gitlab(quiet = FALSE)'
+    artifacts:
+        paths:
+            - public
+        expire_in: 30 days
+
+render:
+    stage: template
+    allow_failure: true
+    when: on_success
+    only:
+        - master
+        - main
+        - production
+        - test-ci
+    script:
+        - Rscript -e 'source("renv/activate.R")'
+        - Rscript -e 'renv::restore()'
+        - Rscript -e 'install.packages("remotes")'
+        - Rscript -e 'remotes::install_cran("rmarkdown", upgrade = "never")'
+        - Rscript -e 'render(input = system.file("rmarkdown", "rmd_template.Rmd", package = "finddxtemplate"), output_format = html_document(), output_dir = "public")'
     artifacts:
         paths:
             - public
