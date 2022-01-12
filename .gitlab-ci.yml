@@ -57,7 +57,6 @@ coverage:
         - master
         - main
         - production
-        - test-ci
     script:
         - Rscript -e 'source("renv/activate.R")'
         - Rscript -e 'renv::restore()'
@@ -82,8 +81,9 @@ rendering:
         - Rscript -e 'source("renv/activate.R")'
         - Rscript -e 'renv::restore()'
         - Rscript -e 'install.packages("remotes")'
+        - Rscript -e 'remotes::install_local(upgrade = "never")'
         - Rscript -e 'remotes::install_cran("rmarkdown", upgrade = "never")'
-        - Rscript -e 'rmarkdown::render(input = system.file("rmarkdown", "rmd_template.Rmd", package = "finddxtemplate"), output_format = html_document(), output_dir = "public")'
+        - Rscript -e 'rmarkdown::render(input = system.file("rmarkdown", "rmd_template.Rmd", package = "finddxtemplate"), output_format = rmarkdown::html_document(), output_dir = "public")'
     artifacts:
         paths:
             - public
