@@ -1,0 +1,64 @@
+---
+title: "Rmarkdown template"
+author: "Finddx"
+logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
+date: "`r Sys.Date()`"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# library(finddxtemplate)
+library(DT)
+```
+
+
+# Writing text
+
+This is a report template made with the `{finddxtemplate}` package.
+
+## Level 2 title
+
+### Level 3 title
+
+#### Level 4 title
+
+Implement bullet points:
+
++ Point 1
++ Point 2
+
+Integrate a hyperlink: <https://www.finddx.org/>
+
+Put text in **bold**.
+
+Put text in _italic_.
+
+# Integrate code and results
+
+```{r}
+print("Hello Finddx")
+```
+
+## In the body of the report
+
+```{r}
+datatable(
+  iris,
+  extensions = c("Select"),
+  options = list(
+    select = list(
+      style = "single",
+      items = "row"
+    ),
+    rowId = 0,
+    scrollX = TRUE,
+    fixedColumns = TRUE,
+    info = FALSE
+  ),
+  selection = "none",
+  escape = FALSE
+)
+```
