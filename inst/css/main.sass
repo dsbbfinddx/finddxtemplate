@@ -1,0 +1,125 @@
+@charset 'utf-8'
+    
+$title-font: imperial-urw, sans-serif  !important
+$text-font: Roboto, sans-serif
+
+// 100% shade of 3 primary
+$primary-purple: #5b254e
+$primary-cyan: #00a2ab
+$primary-grey: #7b97a0
+$primary-red: #e64148
+
+// 85% shade of 3 primary
+$secondary-purple: #703d5f
+$secondary-cyan: #00b0b7
+$secondary-grey: #91a5ad
+$secondary-red: #ea645d
+
+// 65% shade of 3 primary
+$tertiary-purple: #8f637b
+$tertiary-cyan: #6dc3c8
+$tertiary-grey: #adbac0
+$tertiary-red: #f08d80
+
+$color-black: #000000
+$color-white: #fff
+
+@mixin border-and-background-color($border, $background)
+    border-color: $border
+    background-color: $background 
+
+.row
+    padding: 10px
+
+#header
+    text-align: center
+
+    img
+        width: 75%
+
+h1, h2, h3
+    font-family: $title-font
+    text-transform: uppercase
+
+h1
+    color: $tertiary-purple
+
+h2
+    color: $tertiary-cyan
+
+h3
+    color: $tertiary-grey
+
+h4
+    color: $tertiary-red
+
+p
+    font-family: $text-font
+
+a 
+    color: $primary-purple
+    text-decoration: underline
+    font-weight: 100
+
+    &:hover, &:focus
+        color: $primary-purple
+        text-decoration: underline
+        font-weight: 100
+    
+.author, .date, .subtitle
+    color: $secondary-cyan
+
+.list-group-item.active
+    @include border-and-background-color($primary-purple, $primary-purple)
+
+    &:hover
+        @include border-and-background-color($primary-purple, $primary-purple)
+
+table.dataTable tr.selected td, table.dataTable td.selected 
+  background-color: $tertiary-purple !important
+  color: $color-white
+
+.dataTables_wrapper
+    font-family: $title-font
+
+code 
+    background-color: $tertiary-purple
+    color: $color-white
+    
+    span.fu
+        color: $primary-purple
+        font-weight: 700
+    
+    span.at
+        color: $primary-cyan
+    
+    span.st
+        color: $primary-grey
+    
+    span.cn
+        color: $primary-red
+
+.btn-default, .open>.dropdown-toggle.btn
+    color: $color-white
+    @include border-and-background-color($primary-red, $secondary-red)
+
+    .caret
+        margin-left: 4px
+        transform: rotate(90deg)
+
+    &:hover, &:active, &:focus
+        color: $color-white
+        @include border-and-background-color($primary-red, $secondary-red)
+
+        .caret
+            margin-left: 4px
+            transform: rotate(0deg)
+        
+        &:active, &:focus-visible
+            color: $color-white
+            @include border-and-background-color($primary-red, $secondary-red)
+            outline: 0
+            
+            .caret
+                margin-left: 4px
+                transform: rotate(0deg)
