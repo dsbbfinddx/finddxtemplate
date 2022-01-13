@@ -57,6 +57,7 @@ coverage:
         - master
         - main
         - production
+        - test-ci
     script:
         - Rscript -e 'source("renv/activate.R")'
         - Rscript -e 'renv::restore()'
