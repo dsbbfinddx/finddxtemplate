@@ -93,7 +93,7 @@ custom_packages <- c(
   # remotes::install_github("ThinkR-open/checkhelper")
   "pkgdown", "styler", "checkhelper", "remotes", "fusen",
   # remotes::install_github("ThinkR-open/thinkrtemplate")
-  "thinkrtemplate"
+  "thinkrtemplate", "DT"
 )
 renv::snapshot(packages = custom_packages)
 

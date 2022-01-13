@@ -80,6 +80,7 @@ rendering:
     script:
         - Rscript -e 'install.packages("remotes")'
         - Rscript -e 'remotes::install_cran(c("rmarkdown", "ggplot2", "DT"), upgrade = "never")'
+        - Rscript -e 'remotes::install_local(upgrade = "never")'
         - Rscript "dev/dev_history_render_template.R"
     artifacts:
         paths:
@@ -104,7 +105,7 @@ integration:
         - Rscript -e 'install.packages("remotes")'
         - Rscript -e 'install.packages("remotes");remotes::install_github("ThinkR-open/thinkrtemplate", upgrade = "never")'
         - Rscript -e 'remotes::install_local(upgrade = "never")'
-        - Rscript -e 'remotes::install_cran(c("pkgdown"), upgrade = "never")'
+        - Rscript -e 'remotes::install_cran(c("pkgdown", "ggplot2"), upgrade = "never")'
         - Rscript -e 'pkgdown::build_site()'
     artifacts:
         paths:

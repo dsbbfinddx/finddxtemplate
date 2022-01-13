@@ -12,6 +12,7 @@ Description: Tools to create a Rmd template for html documents.
 License: file LICENSE
 Imports: 
     magrittr,
+    rmarkdown,
     utils
 Suggests: 
     knitr,
