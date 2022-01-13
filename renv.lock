@@ -106,13 +106,14 @@
     "checkhelper": {
       "Package": "checkhelper",
       "Version": "0.0.0.9000",
-      "Source": "Repository",
-      "Repository": "https://thinkr-open.r-universe.dev",
-      "RemoteType": "repository",
-      "RemoteUrl": "https://github.com/ThinkR-open/checkhelper",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "checkhelper",
+      "RemoteUsername": "ThinkR-open",
       "RemoteRef": "HEAD",
       "RemoteSha": "6a61d92651e02ff6565f0837edb490c0d5097931",
-      "Hash": "55ba1def90e952d1cf93c898957ac10d"
+      "Hash": "76fefffaf48b519e3355b6223d1a7501"
     },
     "checkmate": {
       "Package": "checkmate",
