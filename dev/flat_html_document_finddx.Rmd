@@ -1,0 +1,120 @@
+---
+title: "flat_additional.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+library(rmarkdown)
+```
+
+```{r development-1}
+# Load already included functions
+pkgload::load_all(export_all = FALSE)
+```
+
+# html document finddx
+
+<!--- # TODO Add some documentation about how the function works... -->
+
+```{r function-html-document}
+#' Convert a .Rmd file into a .html file according to finddx design / template.
+#'
+#' @importFrom rmarkdown html_document
+#'
+#' @param toc Boolean. To include a table of contents in the output. Default is TRUE.
+#' @param toc_depth Numeric. Depth of headers to include in table of contents. Default is 4.
+#' @param toc_float Boolean. To float the table of contents to the left of the document. Default is TRUE.
+#' @param code_folding Character. Enable document readers to toggle the display of R code chunks.
+#' @param ... Additional arguments of \code{rmarkdown::\link{html_document}()}.
+#' 
+#' @return An R Markdown output format object
+#' @export
+html_document_finddx <- function(toc = TRUE, 
+                                 toc_depth = 4, 
+                                 toc_float = TRUE, 
+                                 code_folding = "show", 
+                                 ...) {
+
+  css <- system.file("css", "main.css", package = "finddxtemplate")
+  html_template <- system.file("html_template.html", package = "finddxtemplate")
+
+  html_document(
+    css = css,
+    template = html_template,
+    toc = toc,
+    toc_depth = toc_depth,
+    toc_float = toc_float,
+    code_folding = code_folding,
+    mathjax = NULL,
+    ...
+  )
+}
+```
+
+```{r examples-html-document}
+rmarkdown::render(
+  input = system.file("rmarkdown", "template.Rmd", package = "finddxtemplate"), 
+  output_format = html_document_finddx()
+)
+```
+
+```{r tests-html-document}
+expect_render <- function(template, FUN){
+
+  render_dir <- tempfile()
+
+  dir.create(render_dir)
+  dir.create(file.path(render_dir, "www"))
+
+  file.copy(
+    system.file("rmarkdown", template, package = "finddxtemplate"),
+    render_dir
+  )
+
+  file <- file.path(render_dir, template)
+
+  expect_output(
+    expect_message(
+      rmarkdown::render(
+        input = file,
+        output_format = FUN,
+        output_dir = render_dir),
+      "Output created"
+    ),
+    "pandoc"
+  )
+}
+
+test_that("html_document_finddx works", {
+  expect_render(
+    template = "template.Rmd", 
+    FUN = html_document_finddx()
+  )
+})
+```
+
+
+<!--- # TODO Add some documentation about modify the CSS file... -->
+To update CSS file, run :
+<!--- # TODO Add fun, doc and test -->
+```{r}
+# sass::sass(
+#   input = sass::sass_file(system.file("css", "main.sass", package = "finddxtemplate")), 
+#   output = "inst/css/main.css", 
+#   cache = NULL
+# )
+```
+
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(
+  flat_file = "dev/flat_html_document_finddx.Rmd",
+  vignette_name = "Create html document"
+)
+```
+
