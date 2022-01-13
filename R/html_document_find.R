@@ -13,15 +13,22 @@
 #' @return An R Markdown output format object
 #' @export
 #' @examples
-#' rmarkdown::render(
-#'   input = system.file("rmarkdown", "template.Rmd", package = "finddxtemplate"), 
-#'   output_format = html_document_finddx()
-#' )
-html_document_finddx <- function(toc = TRUE, 
-                                 toc_depth = 4, 
-                                 toc_float = TRUE, 
-                                 code_folding = "show", 
-                                 ...) {
+#' # Store in temp file for the example
+#' rmddir <- tempfile(pattern = "rmd-")
+#' dir.create(rmddir)
+#' 
+#' # Knit
+#' rmarkdown::render(input = system.file("rmarkdown", "rmd_template.Rmd", package = "finddxtemplate"), 
+#'                   output_format = html_document_find(),
+#'                   output_dir = rmddir)
+#' 
+#' # Open the knitted example
+#' browseURL(file.path(rmddir, "rmd_template.html"))
+html_document_find <- function(toc = TRUE, 
+                               toc_depth = 4, 
+                               toc_float = TRUE, 
+                               code_folding = "show", 
+                               ...) {
 
   css <- system.file("css", "main.css", package = "finddxtemplate")
   html_template <- system.file("html_template.html", package = "finddxtemplate")

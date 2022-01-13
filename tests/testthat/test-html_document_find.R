@@ -26,9 +26,9 @@ expect_render <- function(template, FUN){
   )
 }
 
-test_that("html_document_finddx works", {
+test_that("html_document_find works", {
   expect_render(
-    template = "template.Rmd", 
-    FUN = html_document_finddx()
+    template = "rmd_template.Rmd", 
+    FUN = html_document_find()
   )
 })

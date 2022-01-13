@@ -24,6 +24,13 @@ The documentation is available here:
 An overview of the HTML template is available here:
 <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/rmd_template.html>
 
+Or in command
+line:
+
+``` r
+browseURL(system.file("rmarkdown", "rmd_template.html", package = "finddxtemplate"))
+```
+
 ## Installation
 
 You can install the package with:
@@ -38,6 +45,13 @@ options(remotes.git_credentials = git2r::cred_user_pass("gitlab-ci-token", Sys.g
 remotes::install_git("https://forge.thinkr.fr/thinkr/missions/finddx/finddxtemplate")
 ```
 
-## Use the package
+## Use
 
-TODO
+  - *Package installation and dependencies* *(TODO)*
+  - *Integration of the FIND graphic design in R Markdown reports*
+
+Open the pkgdown:
+
+``` r
+finddxtemplate::open_pkgdown()
+```

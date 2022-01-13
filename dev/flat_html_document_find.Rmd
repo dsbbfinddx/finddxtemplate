@@ -1,5 +1,5 @@
 ---
-title: "flat_additional.Rmd empty"
+title: "Integration of the FIND graphic design in R Markdown reports"
 output: html_document
 editor_options: 
   chunk_output_type: console
@@ -15,11 +15,13 @@ library(rmarkdown)
 pkgload::load_all(export_all = FALSE)
 ```
 
-# html document finddx
+# Create an HTML report
 
-<!--- # TODO Add some documentation about how the function works... -->
+The `html_document_find()` function converts an .Rmd file to .html format. It admits `toc`, `toc_depth`, `toc_float` and `code_folding` arguments, similar to those of the `rmarkdown::html_document()` function, to control the appearance of the table of contents and code folding.
 
-```{r function-html-document}
+The `html_document_find()` function is called in the `output_format` argument of the `rmarkdown::render()` function.
+
+```{r function-html_document_find}
 #' Convert a .Rmd file into a .html file according to finddx design / template.
 #'
 #' @importFrom rmarkdown html_document
@@ -32,11 +34,11 @@ pkgload::load_all(export_all = FALSE)
 #' 
 #' @return An R Markdown output format object
 #' @export
-html_document_finddx <- function(toc = TRUE, 
-                                 toc_depth = 4, 
-                                 toc_float = TRUE, 
-                                 code_folding = "show", 
-                                 ...) {
+html_document_find <- function(toc = TRUE, 
+                               toc_depth = 4, 
+                               toc_float = TRUE, 
+                               code_folding = "show", 
+                               ...) {
 
   css <- system.file("css", "main.css", package = "finddxtemplate")
   html_template <- system.file("html_template.html", package = "finddxtemplate")
@@ -54,14 +56,21 @@ html_document_finddx <- function(toc = TRUE,
 }
 ```
 
-```{r examples-html-document}
-rmarkdown::render(
-  input = system.file("rmarkdown", "template.Rmd", package = "finddxtemplate"), 
-  output_format = html_document_finddx()
-)
+```{r examples-html_document_find}
+# Store in temp file for the example
+rmddir <- tempfile(pattern = "rmd-")
+dir.create(rmddir)
+
+# Knit
+rmarkdown::render(input = system.file("rmarkdown", "rmd_template.Rmd", package = "finddxtemplate"), 
+                  output_format = html_document_find(),
+                  output_dir = rmddir)
+
+# Open the knitted example
+browseURL(file.path(rmddir, "rmd_template.html"))
 ```
 
-```{r tests-html-document}
+```{r tests-html_document_find}
 expect_render <- function(template, FUN){
 
   render_dir <- tempfile()
@@ -88,33 +97,30 @@ expect_render <- function(template, FUN){
   )
 }
 
-test_that("html_document_finddx works", {
+test_that("html_document_find works", {
   expect_render(
-    template = "template.Rmd", 
-    FUN = html_document_finddx()
+    template = "rmd_template.Rmd", 
+    FUN = html_document_find()
   )
 })
 ```
 
-
-<!--- # TODO Add some documentation about modify the CSS file... -->
-To update CSS file, run :
-<!--- # TODO Add fun, doc and test -->
-```{r}
-# sass::sass(
-#   input = sass::sass_file(system.file("css", "main.sass", package = "finddxtemplate")), 
-#   output = "inst/css/main.css", 
-#   cache = NULL
-# )
+```{r echo=FALSE, eval=FALSE}
+# To update CSS file, run :
+sass::sass(
+  input = sass::sass_file(system.file("css", "main.sass", package = "finddxtemplate")),
+  output = "inst/css/main.css",
+  cache = NULL
+)
 ```
-
 
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop
 # Execute in the console directly
 fusen::inflate(
-  flat_file = "dev/flat_html_document_finddx.Rmd",
-  vignette_name = "Create html document"
+  flat_file = "dev/flat_html_document_find.Rmd",
+  vignette_name = "b - create html documents",
+  overwrite = "yes",
+  check = FALSE
 )
 ```
-

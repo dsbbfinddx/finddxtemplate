@@ -1,16 +1,18 @@
 ---
 title: FIND HTML template
+logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
 author: ThinkR
 date: "`r Sys.Date()`"
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r echo=FALSE}
 library(finddxtemplate)
 library(ggplot2)
+library(DT)
 ```
 
 # Writing text
@@ -39,9 +41,49 @@ Putting text in _italic_.
 ## In the body of the report
 
 ```{r}
-iris %>% 
-  head() %>% 
-  knitr::kable()
+datatable(
+  iris,
+  extensions = c("Select"),
+  options = list(
+    select = list(
+      style = "single",
+      items = "row"
+    ),
+    rowId = 0,
+    scrollX = TRUE,
+    fixedColumns = TRUE,
+    info = FALSE
+  ),
+  selection = "none",
+  escape = FALSE
+)
+```
+
+```{r echo=FALSE}
+pal_find <- function(n = 14) {
+  stopifnot(n <= 14)
+  find_colors <- c(
+    # 100% shade of 3 primary and 1 secondary FIND color
+    "#5b254e",
+    "#00a2ab",
+    "#7b97a0",
+    "#e64148",
+    # randomly picked from FIND color strips
+    "#306e7c",
+    "#9b2c4c",
+    # 85% shade of 3 primary and 1 secondary FIND color
+    "#703d5f",
+    "#00b0b7",
+    "#91a5ad",
+    "#ea645d",
+    # 65% shade of 3 primary colors and 1 secondary FIND color
+    "#8f637b",
+    "#6dc3c8",
+    "#adbac0",
+    "#f08d80"
+  )
+  find_colors[1:n]
+}
 ```
 
 ```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
@@ -53,7 +95,7 @@ ggplot(data = iris) +
        x = "Sepal width",
        y = "Density",
        fill = "Iris species") +
-  scale_fill_manual(values = c("#5b254e", "#00a2ab", "#7b97a0")) +
+  scale_fill_manual(values = pal_find()) +
   theme_bw()
 ```
 
@@ -77,7 +119,7 @@ ggplot(data = iris) +
        x = "Sepal width",
        y = "Density",
        fill = "Iris species") +
-  scale_fill_manual(values = c("#5b254e", "#00a2ab", "#7b97a0")) +
+  scale_fill_manual(values = pal_find()) +
   guides(fill = "none") +
   facet_grid(rows = vars(Species)) +
   theme_bw()
