@@ -61,7 +61,7 @@ coverage:
         - Rscript -e 'source("renv/activate.R")'
         - Rscript -e 'renv::restore()'
         - Rscript -e 'install.packages("remotes")'
-        - Rscript -e 'remotes::install_cran(c("covr", "DT"), upgrade = "never")'
+        - Rscript -e 'remotes::install_cran(c("covr", "DT", "ggplot2"), upgrade = "never")'
         - Rscript -e 'covr::gitlab(quiet = FALSE)'
     artifacts:
         paths:
