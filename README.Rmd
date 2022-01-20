@@ -22,10 +22,6 @@ The `{finddxtemplate}` package provides design tools to create a Rmd template fo
 
 Current version is 0.1.0.
 
-```{r echo=FALSE, out.width=500, fig.align='center'}
-knitr::include_graphics("vignettes/figures/html_template.png")
-```
-
 The documentation is available here:
 
 - pkgdown: https://connect.thinkr.fr/finddxtemplate-pkgdown-website/

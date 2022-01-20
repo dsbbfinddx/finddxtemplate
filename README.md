@@ -11,10 +11,7 @@ coverage](https://forge.thinkr.fr/thinkr/missions/finddx/finddxtemplate/badges/m
 The `{finddxtemplate}` package provides design tools to create a Rmd
 template for html documents.
 
-Current version is
-0.1.0.
-
-<img src="vignettes/figures/html_template.png" width="500" style="display: block; margin: auto;" />
+Current version is 0.1.0.
 
 The documentation is available here:
 
