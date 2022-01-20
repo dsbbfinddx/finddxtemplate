@@ -128,6 +128,12 @@ attachment::att_amend_desc(
 # Cela est normal : "Error in eval(x, envir = envir) : object 'db_local' not found"
 devtools::check()
 
+# Update version
+# usethis::use_version(which = 'minor')
+
+# Build the tar.gz
+devtools::build()
+
 # Description and Bibliography
 chameleon::create_pkg_desc_file(out.dir = "inst", source = c("archive"), to = "html")
 thinkridentity::create_pkg_biblio_file_thinkr()

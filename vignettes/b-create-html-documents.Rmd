@@ -41,7 +41,7 @@ rmarkdown::render(input = system.file("rmarkdown", "rmd_template.Rmd", package =
 browseURL(file.path(rmddir, "rmd_template.html"))
 ```
 
-Alternatively, you can change the `output` field in the yml header of your .Rmd file:
+Alternatively, you can change the `output` field in the YAML header of your .Rmd file:
 
 ```{r eval = FALSE}
 ---
@@ -64,9 +64,9 @@ logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
 ```{r eval = FALSE}
 ---
 title: "My report"
-logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
 author: "Arthur Bréant"
 date: "1/13/2022"
+logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
 output: finddxtemplate::html_document_find
 ---
 ```
