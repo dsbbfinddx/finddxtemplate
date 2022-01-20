@@ -1,0 +1,44 @@
+---
+title: "Package installation"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+```
+
+<!--
+ You need to run the 'description' chunk in the '0-dev_history.Rmd' file before continuing your code there.
+-->
+
+# Install the package from the command line
+
+```{r eval=FALSE}
+if (requireNamespace("remotes")){install.packages("remotes")}
+remotes::install_local(path = "path/to/finddxtemplate_0.1.0.tar.gz", 
+                       repos = "http://cran.rstudio.com", 
+                       type = "source")
+```
+
+# Install the package graphically
+
+```{r eval=FALSE}
+if (requireNamespace("remotes")){install.packages("remotes")}
+# a window opens and asks to choose the package in tar.gz format
+remotes::install_local(path = file.choose(), 
+                       repos = "http://cran.rstudio.com", 
+                       type = "source")
+```
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(
+  flat_file = "dev/flat_installation.Rmd",
+  vignette_name = "a - package installation",
+  overwrite = "yes",
+  check = FALSE
+)
+```

@@ -3,6 +3,7 @@ title: FIND HTML template
 logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
 author: ThinkR
 date: "`r Sys.Date()`"
+output: finddxtemplate::html_document_find
 ---
 
 ```{r, include=FALSE}
@@ -41,22 +42,8 @@ Putting text in _italic_.
 ## In the body of the report
 
 ```{r}
-datatable(
-  iris,
-  extensions = c("Select"),
-  options = list(
-    select = list(
-      style = "single",
-      items = "row"
-    ),
-    rowId = 0,
-    scrollX = TRUE,
-    fixedColumns = TRUE,
-    info = FALSE
-  ),
-  selection = "none",
-  escape = FALSE
-)
+iris %>% 
+  DT::datatable()
 ```
 
 ```{r echo=FALSE}
@@ -86,7 +73,7 @@ pal_find <- function(n = 14) {
 }
 ```
 
-```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
+```{r fig.width=10, fig.height=6, fig.align='center'}
 ggplot(data = iris) +
   aes(x = Sepal.Width, fill = Species) +
   geom_density(alpha = 0.6, color = NA) +
@@ -110,7 +97,7 @@ iris %>%
 
 ### Plot
 
-```{r fig.width=10, fig.height=6, fig.align='center', echo=FALSE}
+```{r fig.width=10, fig.height=6, fig.align='center'}
 ggplot(data = iris) +
   aes(x = Sepal.Width, fill = Species) +
   geom_density(alpha = 0.6, color = NA) +

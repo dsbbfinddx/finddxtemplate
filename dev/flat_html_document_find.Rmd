@@ -56,7 +56,7 @@ html_document_find <- function(toc = TRUE,
 }
 ```
 
-```{r examples-html_document_find}
+```{r examples-html_document_find, eval=FALSE}
 # Store in temp file for the example
 rmddir <- tempfile(pattern = "rmd-")
 dir.create(rmddir)
@@ -105,13 +105,32 @@ test_that("html_document_find works", {
 })
 ```
 
-```{r echo=FALSE, eval=FALSE}
-# To update CSS file, run :
-sass::sass(
-  input = sass::sass_file(system.file("css", "main.sass", package = "finddxtemplate")),
-  output = "inst/css/main.css",
-  cache = NULL
-)
+Alternatively, you can change the `output` field in the YAML header of your .Rmd file:
+```{r eval=FALSE}
+---
+title: "My report"
+author: "Arthur Bréant"
+date: "1/13/2022"
+output: finddxtemplate::html_document_find
+---
+```
+
+# Add a logo in the HTML report
+
+You can add a logo with through the `logo` field in the yml header of your .Rmd file. It takes the path to the image file. Here, the logo is the one saved in the `{finddxtemplate}` package:
+
+```{r eval=FALSE}
+logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
+```
+
+```{r eval=FALSE}
+---
+title: "My report"
+author: "Arthur Bréant"
+date: "1/13/2022"
+logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
+output: finddxtemplate::html_document_find
+---
 ```
 
 ```{r development-inflate, eval=FALSE}

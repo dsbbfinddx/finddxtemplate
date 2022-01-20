@@ -8,10 +8,13 @@ status](https://forge.thinkr.fr/thinkr/missions/finddx/finddxtemplate/badges/mai
 [![Codecov test
 coverage](https://forge.thinkr.fr/thinkr/missions/finddx/finddxtemplate/badges/main/coverage.svg)](https://connect.thinkr.fr/finddxtemplate-pkgdown-website/coverage.html)
 
-The {finddxtemplate} package provides design tools to create a Rmd
+The `{finddxtemplate}` package provides design tools to create a Rmd
 template for html documents.
 
-Current version is 0.0.0.9000.
+Current version is
+0.1.0.
+
+<img src="vignettes/figures/html_template.png" width="500" style="display: block; margin: auto;" />
 
 The documentation is available here:
 
@@ -36,22 +39,43 @@ browseURL(system.file("rmarkdown", "rmd_template.html", package = "finddxtemplat
 You can install the package with:
 
 ``` r
-# install.packages("remotes")
-remotes::install_local(path = "finddxtemplate_0.0.0.9000.tar.gz")
-```
-
-``` r
-options(remotes.git_credentials = git2r::cred_user_pass("gitlab-ci-token", Sys.getenv("FORGE_THINKR_TOKEN")))
-remotes::install_git("https://forge.thinkr.fr/thinkr/missions/finddx/finddxtemplate")
+if (requireNamespace("remotes")){install.packages("remotes")}
+remotes::install_local(path = "path/to/finddxtemplate_0.1.0.tar.gz", 
+                       repos = "http://cran.rstudio.com", 
+                       type = "source")
 ```
 
 ## Use
 
-  - *Package installation and dependencies* *(TODO)*
-  - *Integration of the FIND graphic design in R Markdown reports*
+  - Open a classical RStudio project File \> New Project…
+  - Open a classical R Markdown file File \> New File \> R Markdown…
+  - Update the YAML header at the top of the file by:
+      - Adding the `logo` field
+      - Changing the `output` field
+
+<!-- end list -->
+
+``` r
+---
+title: "My report"
+author: "Arthur Bréant"
+date: "1/13/2022"
+logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
+output: finddxtemplate::html_document_find
+---
+```
+
+  - Knit
+
+## Documentation
 
 Open the pkgdown:
 
 ``` r
 finddxtemplate::open_pkgdown()
 ```
+
+Two vignettes are available:
+
+  - *Package installation*
+  - *Integration of the FIND graphic design in R Markdown reports*
