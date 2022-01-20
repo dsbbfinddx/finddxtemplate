@@ -25,14 +25,17 @@
   padding: 10px;
 }
 
-/*#header {
-  text-align: center;
-}*/
+/* Author */
+.author, .date, .subtitle {
+  color: var(--color-black);
+}
 
+/* Logo */
 #header img {
   width: 25%;
 }
 
+/* Header */
 h1, h2, h3 {
   font-family: imperial-urw, sans-serif !important;
   text-transform: uppercase;
@@ -58,6 +61,7 @@ p {
   font-family: Roboto, sans-serif;
 }
 
+/* Anchors */
 a {
   color: var(--primary-purple);
   text-decoration: underline;
@@ -68,10 +72,6 @@ a:hover, a:focus {
   color: var(--primary-purple);
   text-decoration: underline;
   font-weight: 100;
-}
-
-.author, .date, .subtitle {
-  color: var(--secondary-cyan);
 }
 
 .list-group-item.active {
@@ -93,11 +93,13 @@ table.dataTable tr.selected td, table.dataTable td.selected {
   font-family: imperial-urw, sans-serif !important;
 }
 
+/* Code in text */
 code {
   background-color: var(--tertiary-purple);
   color: var(--color-white);
 }
 
+/* Code in chunks */
 code span.fu {
   color: var(--primary-purple);
   font-weight: 700;
@@ -115,6 +117,7 @@ code span.cn {
   color: var(--primary-red);
 }
 
+/* Buttons */
 .btn-default, .open>.dropdown-toggle.btn {
   color: var(--color-white);
   border-color: var(--primary-red);
@@ -147,4 +150,83 @@ code span.cn {
 .btn-default:hover:active .caret, .btn-default:hover:focus-visible .caret, .btn-default:active:active .caret, .btn-default:active:focus-visible .caret, .btn-default:focus:active .caret, .btn-default:focus:focus-visible .caret, .open>.dropdown-toggle.btn:hover:active .caret, .open>.dropdown-toggle.btn:hover:focus-visible .caret, .open>.dropdown-toggle.btn:active:active .caret, .open>.dropdown-toggle.btn:active:focus-visible .caret, .open>.dropdown-toggle.btn:focus:active .caret, .open>.dropdown-toggle.btn:focus:focus-visible .caret {
   margin-left: 4px;
   transform: rotate(0deg);
+}
+
+/* Tables */
+.table {
+    width: auto !important; /* to be removed if we want a full page design */
+    border: none;
+    box-shadow: none;
+}
+
+table{ /* body */
+  border-collapse: collapse;
+  border: none; /* charcoal-grey */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th { /* columns names */
+  color: white;
+  background: var(--tertiary-purple);
+}
+
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover { /* cells style */
+  background-color: transparent !important;
+}
+
+table.dataTable tbody tr, table.dataTable.display tbody tr {
+  background-color: transparent !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    color: var(--tertiary-purple);
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+  outline: solid 2px var(--tertiary-purple);
+}
+
+.dataTables_wrapper .dataTables_length select {
+  color: var(--tertiary-purple);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--tertiary-purple);
+  border: none !important;
+  color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: transparent;
+  color: var(--tertiary-purple) !important;
+}
+
+/* Tabsets */
+.nav-tabs > li > a {
+    color: var(--tertiary-cyan);
+    text-decoration: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    cursor: default;
+    background-color: transparent;
+    font-weight: bold;
+    border: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: : transparent;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-bottom-color: var(--tertiary-cyan);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.tab-content>.tab-pane {
+    animation: fadein .8s;
 }

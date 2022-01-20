@@ -3,6 +3,7 @@ title: FIND HTML template
 logo: "`r system.file('logo', 'logo.svg', package = 'finddxtemplate')`"
 author: ThinkR
 date: "`r Sys.Date()`"
+output: finddxtemplate::html_document_find
 ---
 
 ```{r, include=FALSE}
