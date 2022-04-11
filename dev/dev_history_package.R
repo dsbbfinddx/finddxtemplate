@@ -51,11 +51,17 @@ dir.create("inst/excel_files")
 usethis::use_testthat()
 usethis::use_test("app")
 
+# _CI github ----
+usethis::use_github_action_check_standard()
+usethis::use_github_action("pkgdown")
+usethis::use_github_action("test-coverage")
+
 # _CI (cf {gitlabr} templates) ----
-thinkridentity::use_gitlab_ci(image = "rocker/verse",
-                              gitlab_url = "https://forge.thinkr.fr",
-                              repo_name = "https://packagemanager.rstudio.com/all/__linux__/focal/latest",
-                              type = "check-coverage-pkgdown-renv")
+thinkridentity::use_gitlab_ci(
+  image = "rocker/verse",
+  gitlab_url = "https://forge.thinkr.fr",
+  repo_name = "https://packagemanager.rstudio.com/all/__linux__/focal/latest",
+  type = "check-coverage-pkgdown-renv")
 # GitLab MR and git commit templates
 thinkridentity::add_gitlab_templates()
 
