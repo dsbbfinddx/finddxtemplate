@@ -15,6 +15,8 @@ Imports:
     rmarkdown,
     utils
 Suggests: 
+    DT,
+    ggplot2,
     knitr,
     testthat
 VignetteBuilder: 

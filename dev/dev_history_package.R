@@ -129,7 +129,7 @@ pkgdown::build_site()
 ## Ce qu'il faut avant d'envoyer sur le serveur
 # devtools::install_github("ThinkR-open/attachment")
 attachment::att_amend_desc(
-  extra.suggests = c("knitr", "testthat")
+  extra.suggests = c("knitr", "testthat", "ggplot2", "DT")
 )
 # Cela est normal : "Error in eval(x, envir = envir) : object 'db_local' not found"
 devtools::check()
