@@ -3,10 +3,13 @@
 
 # finddxtemplate <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
+<!-- badges: start -->
+
 [![R build
-status](https://forge.thinkr.fr/thinkr/missions/finddx/finddxtemplate/badges/main/pipeline.svg)](https://forge.thinkr.fr/finddx/finddxtemplate/-/pipelines)
-[![Codecov test
-coverage](https://forge.thinkr.fr/thinkr/missions/finddx/finddxtemplate/badges/main/coverage.svg)](https://connect.thinkr.fr/finddxtemplate-pkgdown-website/coverage.html)
+status](https://github.com/dsbbfinddx/finddxtemplate/workflows/R-CMD-check/badge.svg)](https://github.com/dsbbfinddx/finddxtemplate/actions)
+<!-- [![codecov test coverage](https://app.codecov.io/gh/ThinkR-open/fusen/branch/master/graph/badge.svg?token=V0HOSAY8WW)](https://app.codecov.io/gh/ThinkR-open/fusen) -->
+<!-- [![](https://cranlogs.r-pkg.org/badges/fusen)](https://cran.r-project.org/package=fusen) -->
+<!-- badges: end -->
 
 The `{finddxtemplate}` package provides design tools to create a Rmd
 template for html documents.
@@ -15,8 +18,8 @@ Current version is 0.1.0.
 
 The documentation is available here:
 
-  - pkgdown: <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/>
-  - coverage report:
+-   pkgdown: <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/>
+-   coverage report:
     <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/coverage.html>
 
 ## HTML template
@@ -24,8 +27,7 @@ The documentation is available here:
 An overview of the HTML template is available here:
 <https://connect.thinkr.fr/finddxtemplate-pkgdown-website/rmd_template.html>
 
-Or in command
-line:
+Or in command line:
 
 ``` r
 browseURL(system.file("rmarkdown", "rmd_template.html", package = "finddxtemplate"))
@@ -44,13 +46,11 @@ remotes::install_local(path = "path/to/finddxtemplate_0.1.0.tar.gz",
 
 ## Use
 
-  - Open a classical RStudio project File \> New Project…
-  - Open a classical R Markdown file File \> New File \> R Markdown…
-  - Update the YAML header at the top of the file by:
-      - Adding the `logo` field
-      - Changing the `output` field
-
-<!-- end list -->
+-   Open a classical RStudio project File \> New Project…
+-   Open a classical R Markdown file File \> New File \> R Markdown…
+-   Update the YAML header at the top of the file by:
+    -   Adding the `logo` field
+    -   Changing the `output` field
 
 ``` r
 ---
@@ -62,7 +62,7 @@ output: finddxtemplate::html_document_find
 ---
 ```
 
-  - Knit
+-   Knit
 
 ## Documentation
 
@@ -74,5 +74,5 @@ finddxtemplate::open_pkgdown()
 
 Two vignettes are available:
 
-  - *Package installation*
-  - *Integration of the FIND graphic design in R Markdown reports*
+-   *Package installation*
+-   *Integration of the FIND graphic design in R Markdown reports*
