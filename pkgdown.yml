@@ -1,0 +1,8 @@
+pandoc: 2.7.3
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  a-package-installation: a-package-installation.html
+  b-create-html-documents: b-create-html-documents.html
+last_built: 2022-04-11T08:32Z
+
