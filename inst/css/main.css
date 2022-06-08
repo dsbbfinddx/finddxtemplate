@@ -31,8 +31,46 @@
 }
 
 /* Logo */
-#header img {
-  width: 25%;
+.container-logo {
+  position: fixed;
+  width: 154px;
+  height: 53px;
+  margin: 15px 0 0 -15em;
+}
+
+.toc-logo {
+  max-width: 260px;
+  margin: 0px 0px 13px 0px;
+  width: 154px;
+  height: 53px;
+}
+
+.tocify {
+  position: inherit;
+}
+
+div.tocify {
+  width: 100% !important;
+}
+
+.col-xs-12.col-sm-4.col-md-3 {
+  position: sticky;
+  top: 25px;
+}
+
+@media (max-width: 768px) {
+  .col-xs-12.col-sm-4.col-md-3 {
+    position: inherit;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container-logo {
+    position: inherit;
+    width: 154px;
+    height: 53px;
+    margin: 15px 0 0 0;
+  }
 }
 
 /* Header */
